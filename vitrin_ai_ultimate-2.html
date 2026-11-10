@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080d1c">
+<meta name="description" content="ویترین AI؛ راهنمای انتخاب و مقایسه ابزارهای هوش مصنوعی برای تولید متن، تصویر، ویدیو، صدا، برنامه‌نویسی و یادگیری.">
+<title>ویترین AI | راهنمای ابزارهای هوش مصنوعی</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
+:root{--bg:#080d1c;--surface:#10182b;--surface2:#17223b;--text:#f5f7ff;--muted:#a5b1cc;--line:#ffffff14;--purple:#9270ff;--cyan:#35d8e8;--pink:#f27bc2;--green:#55d6a2;--shadow:0 18px 55px #0005;--radius:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font-family:Vazirmatn,Tahoma,sans-serif;line-height:1.7;overflow-x:hidden;transition:background .25s,color .25s}
+body.light{--bg:#f4f6ff;--surface:#fff;--surface2:#edf0ff;--text:#18203b;--muted:#63708d;--line:#1b2a5018;--shadow:0 18px 45px #42508018}
+a{color:inherit;text-decoration:none}button,input,select{font:inherit}button{color:inherit}.container{width:min(1160px,92%);margin:auto}
+.bg-glow{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden}.blob{position:absolute;border-radius:50%;filter:blur(85px);opacity:.18;animation:drift 17s ease-in-out infinite alternate}.blob.a{width:390px;height:390px;background:#7c3aed;right:-150px;top:4%}.blob.b{width:350px;height:350px;background:#0891b2;left:-130px;bottom:5%;animation-delay:-6s}.blob.c{width:220px;height:220px;background:#db2777;left:40%;top:45%;animation-delay:-11s}@keyframes drift{to{transform:translate(70px,-55px) scale(1.16)}}
+header{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 83%,transparent);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:10px;font-size:1.2rem;font-weight:900;white-space:nowrap}.brand-mark{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--purple),var(--cyan));display:grid;place-items:center;color:white;font-size:23px;box-shadow:0 8px 25px #7c3aed55}.gradient{background:linear-gradient(90deg,#b49aff,#40e4ed,#ff91cb);background-size:200%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite}@keyframes shine{to{background-position:200% center}}
+.navlinks{display:flex;gap:22px;color:var(--muted);font-size:.9rem}.navlinks a:hover{color:var(--cyan)}.nav-actions{display:flex;gap:8px}.icon-btn{width:41px;height:41px;border:1px solid var(--line);background:var(--surface);border-radius:13px;cursor:pointer;transition:.2s}.icon-btn:hover{transform:translateY(-3px);border-color:var(--cyan)}
+.menu-btn{display:none}
+.hero{padding:82px 0 46px;text-align:center;position:relative}.eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid #9270ff55;background:#9270ff17;color:#cbbcff;padding:7px 14px;border-radius:30px;font-size:.85rem}.live-dot{width:8px;height:8px;background:var(--green);border-radius:50%;box-shadow:0 0 0 5px #55d6a222}.hero h1{font-size:clamp(2.25rem,6vw,4.7rem);line-height:1.27;font-weight:900;max-width:900px;margin:22px auto 14px}.hero>p{max-width:700px;color:var(--muted);margin:0 auto 25px;line-height:2;font-size:1.02rem}.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.btn{border:0;border-radius:14px;padding:12px 20px;font-weight:750;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.22s}.btn:hover{transform:translateY(-3px);filter:brightness(1.08)}.primary{background:linear-gradient(110deg,#8058ec,#4169e8);color:#fff;box-shadow:0 10px 28px #6d50df44}.ghost{background:var(--surface);border:1px solid var(--line);color:var(--text)}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:660px;margin:42px auto 0}.metric{padding:14px;background:var(--surface);border:1px solid var(--line);border-radius:17px}.metric strong{display:block;color:var(--cyan);font-size:1.45rem}.metric span{color:var(--muted);font-size:.82rem}
+.section{padding:38px 0}.section-title{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:20px}.section-title h2{margin:0 0 4px;font-size:1.7rem}.section-title p{margin:0;color:var(--muted);font-size:.92rem}.hint{color:var(--muted);font-size:.82rem}
+.toolbar{display:grid;grid-template-columns:1fr auto auto;gap:10px;margin:20px 0 14px}.search{position:relative}.search input{width:100%;height:49px;padding:0 46px 0 15px;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:14px;outline:0}.search input:focus{border-color:var(--purple);box-shadow:0 0 0 3px #9270ff20}.search span{position:absolute;right:15px;top:9px;font-size:21px;color:var(--muted)}.toolbar select{min-width:145px;padding:0 12px;border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--text);outline:0}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0 22px}.chip{padding:8px 14px;border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:30px;cursor:pointer;font-size:.85rem;transition:.2s}.chip:hover,.chip.active{background:linear-gradient(110deg,#8058ec,#4169e8);border-color:transparent;color:white}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:21px;padding:19px;overflow:hidden;transition:.28s;animation:appear .45s both}.card:before{content:"";height:3px;position:absolute;inset:0 0 auto;background:linear-gradient(90deg,var(--purple),var(--cyan),var(--pink));opacity:0;transition:.2s}.card:hover{transform:translateY(-6px);border-color:#9270ff88;box-shadow:var(--shadow)}.card:hover:before{opacity:1}@keyframes appear{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+.card-top{display:flex;align-items:center;justify-content:space-between}.tool-icon{width:51px;height:51px;border-radius:15px;display:grid;place-items:center;background:var(--surface2);border:1px solid var(--line);font-size:26px}.card-controls{display:flex;gap:4px}.mini-btn{border:0;background:transparent;color:var(--muted);font-size:20px;cursor:pointer;padding:5px}.mini-btn.saved{color:#f7c948}.mini-btn.checked{color:var(--cyan)}.card h3{margin:13px 0 4px;font-size:1.12rem}.tags{display:flex;gap:6px;flex-wrap:wrap}.tag{font-size:.72rem;border-radius:20px;padding:3px 9px;background:#9270ff1c;color:#bba9ff}.tag.price{background:#55d6a21b;color:#6de0b2}.card p{color:var(--muted);font-size:.87rem;line-height:1.85;min-height:52px;margin:11px 0 14px}.card-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px}.visit{font-size:.82rem;font-weight:700;background:linear-gradient(110deg,#8058ec,#4169e8);color:#fff;padding:8px 13px;border-radius:10px}.more{font-size:.8rem;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:10px;padding:7px 10px;cursor:pointer}.empty{grid-column:1/-1;padding:48px 15px;text-align:center;background:var(--surface);border:1px dashed var(--line);border-radius:20px;color:var(--muted)}
+.compare-bar{position:sticky;bottom:12px;z-index:15;margin:20px auto 0;padding:12px 15px;background:color-mix(in srgb,var(--surface) 92%,transparent);border:1px solid #9270ff66;box-shadow:var(--shadow);border-radius:17px;display:none;align-items:center;justify-content:space-between;gap:12px;backdrop-filter:blur(15px)}.compare-bar.show{display:flex}.compare-bar small{color:var(--muted)}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.feature{padding:21px;border-radius:19px;background:var(--surface);border:1px solid var(--line)}.feature .emoji{font-size:26px}.feature h3{font-size:1rem;margin:9px 0 5px}.feature p{color:var(--muted);font-size:.86rem;line-height:1.85;margin:0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.step{padding:20px;background:var(--surface);border:1px solid var(--line);border-radius:18px}.step-num{width:32px;height:32px;display:grid;place-items:center;background:#9270ff25;color:#bdaaff;border-radius:10px;font-weight:800}.step h3{font-size:1rem;margin:10px 0 4px}.step p{color:var(--muted);font-size:.86rem;margin:0;line-height:1.8}
+.faq{display:grid;gap:10px}.faq details{background:var(--surface);border:1px solid var(--line);border-radius:15px;padding:15px 18px}.faq summary{cursor:pointer;font-weight:700}.faq details p{color:var(--muted);line-height:1.9;margin:10px 0 0;font-size:.9rem}
+.about-box{padding:25px;background:linear-gradient(130deg,#8058ec20,#22cde01a);border:1px solid var(--line);border-radius:22px}.about-box p{color:var(--muted);line-height:2;margin:8px 0 0}
+footer{border-top:1px solid var(--line);margin-top:38px;padding:28px 0;color:var(--muted);font-size:.84rem;text-align:center}.footer-links{display:flex;justify-content:center;gap:18px;margin:10px 0}.footer-links a:hover{color:var(--cyan)}
+.toast{position:fixed;bottom:25px;left:50%;z-index:60;transform:translate(-50%,100px);opacity:0;background:#18233d;color:white;padding:11px 18px;border-radius:12px;box-shadow:var(--shadow);transition:.3s;white-space:nowrap}.toast.show{transform:translate(-50%,0);opacity:1}
+.overlay{position:fixed;inset:0;background:#020617bb;z-index:50;display:none;align-items:center;justify-content:center;padding:18px}.overlay.show{display:flex}.dialog{width:min(520px,100%);max-height:85vh;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:23px;box-shadow:var(--shadow);animation:appear .25s}.dialog-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.dialog h3{margin:0}.close{border:0;background:var(--surface2);border-radius:9px;padding:6px 10px;cursor:pointer}.dialog p{color:var(--muted);line-height:2}.dialog .meta{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.compare-table{width:100%;border-collapse:collapse;margin-top:12px;font-size:.86rem}.compare-table th,.compare-table td{padding:11px 8px;border-bottom:1px solid var(--line);text-align:right;vertical-align:top}.compare-table th{color:var(--cyan)}
+.backtop{position:fixed;bottom:22px;right:20px;width:43px;height:43px;border-radius:14px;border:1px solid var(--line);background:var(--surface);color:var(--text);cursor:pointer;display:none;z-index:12;box-shadow:var(--shadow)}.backtop.show{display:block}
+.reveal{opacity:0;transform:translateY(20px);transition:.65s}.reveal.visible{opacity:1;transform:none}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,1fr)}.navlinks{display:none}.feature-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:570px){.hero{padding:60px 0 35px}.grid,.feature-grid,.steps{grid-template-columns:1fr}.toolbar{grid-template-columns:1fr 1fr}.search{grid-column:1/-1}.toolbar select{height:45px;min-width:0}.metrics{gap:7px}.metric{padding:11px 4px}.metric strong{font-size:1.2rem}.section-title{display:block}.section-title .hint{display:block;margin-top:7px}.nav{height:66px}.brand{font-size:1.05rem}.brand-mark{width:38px;height:38px}.compare-bar{align-items:flex-start;flex-direction:column}.compare-bar .btn{width:100%}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* افزونه‌های نسخه اجتماعی و مدیریتی */
+.account-pill{font-size:.78rem;color:var(--cyan);white-space:nowrap}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:21px;padding:21px}
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.field{display:grid;gap:6px}.field label{font-size:.84rem;color:var(--muted)}
+.field input,.field textarea,.field select{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:12px;background:var(--surface2);color:var(--text);outline:0}
+.field textarea{min-height:90px;resize:vertical}.field.full{grid-column:1/-1}
+.form-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px}
+.review-strip{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:-3px 0 13px;color:var(--muted);font-size:.78rem}
+.stars{color:#f6c84b;letter-spacing:1px}.review-list{display:grid;gap:10px;margin-top:15px}
+.review-item{padding:13px;border-radius:13px;background:var(--surface2);border:1px solid var(--line)}
+.review-item strong{font-size:.9rem}.review-item p{margin:5px 0;color:var(--muted);font-size:.85rem}
+.rank-number{display:inline-grid;place-items:center;width:27px;height:27px;border-radius:9px;background:#9270ff24;color:#c2b2ff;font-weight:800;margin-left:7px}
+.admin-tools{display:grid;gap:8px;margin-top:15px}.admin-row{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:12px}
+.admin-row small{color:var(--muted)}.danger{background:#ef44441c;color:#f87171;border:1px solid #ef444444;border-radius:9px;padding:7px 10px;cursor:pointer}
+.note{font-size:.82rem;color:var(--muted);line-height:1.9;background:var(--surface2);padding:12px 14px;border-radius:12px;margin-top:13px}
+.rating-input{display:flex;gap:7px;direction:ltr;justify-content:flex-end}.rating-input button{border:0;background:transparent;font-size:27px;color:#64708a;cursor:pointer}.rating-input button.active{color:#f6c84b}
+.user-box{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+@media(max-width:570px){.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.account-pill{display:none}}
+
+</style>
+</head>
+<body>
+<div class="bg-glow" aria-hidden="true"><i class="blob a"></i><i class="blob b"></i><i class="blob c"></i></div>
+<header><div class="container nav">
+<a class="brand" href="#home"><span class="brand-mark">✦</span><span>ویترین <span class="gradient">AI</span></span></a>
+<nav class="navlinks" aria-label="ناوبری اصلی"><a href="#tools">ابزارها</a><a href="#guide">راهنمای انتخاب</a><a href="#features">امکانات</a><a href="#community">دیدگاه‌ها</a><a href="#admin">مدیریت</a><a href="#faq">سؤالات متداول</a></nav>
+<div class="nav-actions"><button class="icon-btn" id="themeBtn" aria-label="تغییر حالت رنگ">☀️</button><button class="icon-btn" id="favToggle" aria-label="نمایش علاقه‌مندی‌ها">♡</button><button class="icon-btn" id="accountBtn" aria-label="حساب کاربری">👤</button></div>
+</div></header>
+<main id="home">
+<section class="hero container">
+<span class="eyebrow"><i class="live-dot"></i> راهنمای کشف ابزارهای هوش مصنوعی</span>
+<h1>برای هر ایده‌ای، یک ابزار <span class="gradient">هوشمند</span> پیدا کن</h1>
+<p>دنیای هوش مصنوعی را ساده‌تر کشف کن؛ ابزارهای تولید متن، تصویر، ویدیو، صدا، برنامه‌نویسی و یادگیری را جست‌وجو و با هم مقایسه کن.</p>
+<div class="actions"><a class="btn primary" href="#tools">🚀 دیدن ابزارها</a><a class="btn ghost" href="#guide">🧭 راهنمای انتخاب</a></div>
+<div class="metrics"><div class="metric"><strong id="countTools">۲۵+</strong><span>ابزار معرفی‌شده</span></div><div class="metric"><strong>۹</strong><span>دسته‌بندی کاربردی</span></div><div class="metric"><strong>رایگان</strong><span>برای استفاده از راهنما</span></div></div>
+</section>
+<section class="section container" id="tools">
+<div class="section-title"><div><h2>🧰 کتابخانه ابزارها</h2><p>ابزار مناسب را با جست‌وجو و فیلتر پیدا کن.</p></div><span class="hint" id="resultCount"></span></div>
+<div class="toolbar">
+<label class="search"><span>⌕</span><input id="search" type="search" placeholder="نام ابزار، دسته یا کاربرد..." aria-label="جست‌وجوی ابزار"></label>
+<select id="sort" aria-label="مرتب‌سازی"><option value="recommended">مرتب‌سازی: پیشنهادی</option><option value="az">نام: الف تا ی</option><option value="free">رایگان یا دارای پلن رایگان</option><option value="favorites">علاقه‌مندی‌ها اول</option><option value="popular">محبوب‌ترین‌ها</option><option value="newest">تازه‌ترین‌ها</option></select>
+<select id="priceFilter" aria-label="فیلتر هزینه"><option value="all">همه مدل‌های قیمت</option><option value="free">رایگان / پلن رایگان</option><option value="paid">اشتراکی / پولی</option></select>
+</div>
+<div class="chips" id="chips" aria-label="فیلتر دسته‌بندی"></div>
+<div class="grid" id="grid" aria-live="polite"></div>
+<div class="compare-bar" id="compareBar"><div><strong>⚖️ مقایسه ابزارها</strong><br><small id="compareCount">۰ ابزار انتخاب شده</small></div><div class="actions"><button class="btn ghost" id="clearCompare">پاک کردن</button><button class="btn primary" id="showCompare">مقایسه کن</button></div></div>
+</section>
+<section class="section container reveal" id="guide">
+<div class="section-title"><div><h2>🧭 چطور ابزار مناسب را انتخاب کنم؟</h2><p>قبل از ثبت‌نام یا پرداخت، این سه مرحله را انجام بده.</p></div></div>
+<div class="steps">
+<div class="step"><span class="step-num">۱</span><h3>نیازت را مشخص کن</h3><p>می‌خواهی متن بنویسی، عکس بسازی، درس بخوانی یا کدنویسی کنی؟ اول کاربرد اصلی را انتخاب کن.</p></div>
+<div class="step"><span class="step-num">۲</span><h3>امکانات و محدودیت‌ها را بسنج</h3><p>زبان‌های پشتیبانی‌شده، سقف استفاده، کیفیت خروجی و حریم خصوصی را در سایت رسمی بررسی کن.</p></div>
+<div class="step"><span class="step-num">۳</span><h3>با یک کار واقعی امتحان کن</h3><p>یک درخواست یکسان را در چند ابزار آزمایش کن و نتیجه، سرعت و راحتی کار را مقایسه کن.</p></div>
+</div>
+</section>
+<section class="section container reveal" id="features">
+<div class="section-title"><div><h2>✨ امکانات ویترین AI</h2><p>یک راهنمای ساده، کاربردی و قابل استفاده در موبایل و کامپیوتر.</p></div></div>
+<div class="feature-grid">
+<div class="feature"><span class="emoji">🔍</span><h3>جست‌وجوی زنده</h3><p>با تایپ نام یا کاربرد، فهرست ابزارها همان لحظه فیلتر می‌شود.</p></div>
+<div class="feature"><span class="emoji">🗂️</span><h3>دسته‌بندی دقیق</h3><p>ابزارها را در گروه‌های موضوعی جداگانه پیدا کن.</p></div>
+<div class="feature"><span class="emoji">⭐</span><h3>علاقه‌مندی‌ها</h3><p>ابزارهای منتخب را ذخیره کن؛ انتخاب‌ها روی همین مرورگر باقی می‌مانند.</p></div>
+<div class="feature"><span class="emoji">⚖️</span><h3>مقایسه کنار هم</h3><p>تا سه ابزار را انتخاب کن و کاربرد، دسته و مدل دسترسی‌شان را کنار هم ببین.</p></div>
+<div class="feature"><span class="emoji">🌗</span><h3>تم روشن و تاریک</h3><p>ظاهر سایت را به سلیقه خودت تغییر بده؛ انتخابت ذخیره می‌شود.</p></div>
+<div class="feature"><span class="emoji">🔗</span><h3>اشتراک‌گذاری ابزار</h3><p>لینک هر ابزار را کپی کن و برای دوستانت بفرست.</p></div>
+<div class="feature"><span class="emoji">📱</span><h3>واکنش‌گرا</h3><p>چیدمان صفحه برای گوشی، تبلت و نمایشگر بزرگ تنظیم شده است.</p></div>
+<div class="feature"><span class="emoji">♿</span><h3>دسترسی‌پذیری بهتر</h3><p>دکمه‌های دارای برچسب، پیمایش صفحه‌کلید و احترام به کاهش حرکت انیمیشن‌ها.</p></div>
+<div class="feature"><span class="emoji">🧾</span><h3>اطلاعات شفاف</h3><p>مدل قیمت‌گذاری به‌صورت کلی نشان داده می‌شود؛ شرایط دقیق را در سایت رسمی ببین.</p></div>
+</div>
+</section>
+
+<section class="section container reveal" id="community">
+ <div class="section-title"><div><h2>💬 امتیازها و دیدگاه کاربران</h2><p>تجربه‌ات را درباره ابزارها ثبت کن و نظر دیگران را بخوان.</p></div></div>
+ <div class="panel">
+  <div class="section-title"><div><h3 style="margin:0">⭐ ابزارهای محبوب کاربران</h3><p>رتبه‌بندی بر اساس امتیازهای ثبت‌شده در همین مرورگر.</p></div></div>
+  <div id="leaderboard" class="review-list"></div>
+ </div>
+ <div class="panel" style="margin-top:15px">
+  <h3 style="margin-top:0">🗣️ آخرین دیدگاه‌ها</h3>
+  <div id="latestReviews" class="review-list"><p class="hint">هنوز دیدگاهی ثبت نشده است.</p></div>
+ </div>
+</section>
+<section class="section container reveal" id="admin">
+ <div class="section-title"><div><h2>🛠️ پنل مدیریت محتوا</h2><p>ابزارهای جدید را به فهرست محلی سایت اضافه یا حذف کن.</p></div></div>
+ <div class="panel">
+  <div class="note">حالت نمایشی: این پنل و داده‌های آن فقط در مرورگر فعلی ذخیره می‌شوند. برای سایت عمومی، پنل مدیریت باید پشت ورود امنِ سمت سرور و پایگاه داده واقعی قرار بگیرد؛ این نسخه به‌تنهایی کنترل دسترسی امن اینترنتی ندارد.</div>
+  <form id="addToolForm" style="margin-top:18px">
+   <div class="form-grid">
+    <div class="field"><label for="newName">نام ابزار</label><input id="newName" required maxlength="45" placeholder="مثلاً ابزار جدید"></div>
+    <div class="field"><label for="newIcon">ایموجی / نماد</label><input id="newIcon" maxlength="8" value="✨"></div>
+    <div class="field"><label for="newCat">دسته‌بندی</label><select id="newCat" required></select></div>
+    <div class="field"><label for="newPrice">وضعیت قیمت</label><select id="newPrice"><option value="free">رایگان یا دارای پلن رایگان</option><option value="paid">اشتراکی / پولی</option></select></div>
+    <div class="field full"><label for="newUrl">لینک رسمی ابزار</label><input id="newUrl" type="url" required placeholder="https://example.com"></div>
+    <div class="field full"><label for="newDesc">توضیح کوتاه</label><textarea id="newDesc" required maxlength="240" placeholder="این ابزار چه کاری انجام می‌دهد؟"></textarea></div>
+    <div class="field full"><label for="newBest">بهترین کاربرد</label><input id="newBest" required maxlength="60" placeholder="مثلاً تولید تصویر"></div>
+   </div>
+   <div class="form-actions"><button class="btn primary" type="submit">＋ افزودن ابزار</button><button class="btn ghost" type="reset">پاک کردن فرم</button></div>
+  </form>
+  <h3>مدیریت ابزارهای اضافه‌شده</h3><div id="adminList" class="admin-tools"></div>
+ </div>
+</section>
+
+<section class="section container reveal" id="faq">
+<div class="section-title"><div><h2>❔ سؤالات متداول</h2><p>چند نکته مهم درباره استفاده از ابزارها.</p></div></div>
+<div class="faq">
+<details><summary>آیا همه ابزارها رایگان هستند؟</summary><p>نه. بعضی ابزارها کاملاً رایگان‌اند و بعضی فقط پلن رایگان محدود دارند یا برای امکانات بیشتر اشتراک می‌خواهند. شرایط ممکن است تغییر کند؛ قبل از استفاده، صفحه قیمت‌گذاری رسمی را بررسی کن.</p></details>
+<details><summary>چطور بفهمم کدام ابزار بهتر است؟</summary><p>بهترین ابزار برای همه یکسان نیست. نوع کار، زبان موردنیاز، کیفیت خروجی، محدودیت استفاده و بودجه‌ات را در نظر بگیر و چند گزینه را با یک نمونه کار واقعی مقایسه کن.</p></details>
+<details><summary>آیا ویترین AI خودش ابزارها را اجرا می‌کند؟</summary><p>خیر؛ این سایت یک فهرست راهنماست. با دکمه «ورود به سایت» به وب‌سایت رسمی هر سرویس منتقل می‌شوی.</p></details>
+<details><summary>چرا بعضی ابزارها ممکن است در کشور من باز نشوند؟</summary><p>دسترسی به برخی سرویس‌ها ممکن است به کشور، سن، نوع حساب یا قوانین ارائه‌دهنده وابسته باشد. همیشه شرایط و محدودیت‌های رسمی سرویس را بررسی کن.</p></details>
+<details><summary>آیا می‌توانم ابزار جدیدی به فهرست اضافه کنم؟</summary><p>بله؛ این نسخه به‌صورت فایل HTML ساخته شده و فهرست ابزارها در بخش داده‌های کد قرار دارد. برای افزودن ابزار جدید، یک مورد با نام، دسته، توضیح و نشانی رسمی به فهرست اضافه می‌شود.</p></details>
+</div>
+</section>
+<section class="section container reveal" id="about"><div class="about-box"><h2>💡 درباره ویترین AI</h2><p>ویترین AI یک راهنمای مستقل برای آشنایی با ابزارهای هوش مصنوعی است و وابستگی رسمی به سرویس‌های معرفی‌شده ندارد. عبارت‌هایی مثل «بهترین» به نیاز هر فرد بستگی دارند و این فهرست رتبه‌بندی قطعی یا بررسی آزمایشگاهی نیست. قابلیت‌ها، قیمت‌ها و دسترس‌پذیری سرویس‌ها ممکن است تغییر کنند؛ برای تصمیم نهایی، اطلاعات را از وب‌سایت رسمی همان سرویس بررسی کن. از بارگذاری اطلاعات خصوصی یا محرمانه در ابزارهای آنلاین خودداری کن.</p></div></section>
+</main>
+
+<div class="overlay" id="accountOverlay"><div class="dialog">
+ <div class="dialog-head"><h3>👤 حساب کاربری نمایشی</h3><button class="close" data-close="accountOverlay">✕</button></div>
+ <div id="accountContent"></div>
+</div></div>
+<div class="overlay" id="reviewOverlay"><div class="dialog">
+ <div class="dialog-head"><h3 id="reviewTitle">ثبت دیدگاه</h3><button class="close" data-close="reviewOverlay">✕</button></div>
+ <form id="reviewForm">
+  <p class="hint">امتیازت را انتخاب کن و تجربه‌ات را بنویس.</p>
+  <div class="rating-input" id="ratingInput" aria-label="امتیاز از یک تا پنج">
+   <button type="button" data-rate="1">★</button><button type="button" data-rate="2">★</button><button type="button" data-rate="3">★</button><button type="button" data-rate="4">★</button><button type="button" data-rate="5">★</button>
+  </div>
+  <div class="field"><label for="reviewText">دیدگاه</label><textarea id="reviewText" required maxlength="500" placeholder="تجربه‌ات از این ابزار را بنویس..."></textarea></div>
+  <div class="form-actions"><button class="btn primary" type="submit">ثبت دیدگاه</button></div>
+ </form>
+</div></div>
+
+<footer><div class="container"><div class="brand" style="justify-content:center"><span class="brand-mark">✦</span><span>ویترین <span class="gradient">AI</span></span></div><div class="footer-links"><a href="#home">ابتدای صفحه</a><a href="#tools">ابزارها</a><a href="#faq">راهنما</a></div>ساخته‌شده برای کشف ساده‌تر دنیای هوش مصنوعی · © ۲۰۲۶</div></footer>
+<button class="backtop" id="backtop" aria-label="بازگشت به بالای صفحه">↑</button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="overlay" id="detailOverlay"><div class="dialog"><div class="dialog-head"><h3 id="detailTitle"></h3><button class="close" data-close="detailOverlay" aria-label="بستن">✕</button></div><div class="meta" id="detailMeta"></div><p id="detailText"></p><div class="actions"><a class="btn primary" id="detailVisit" target="_blank" rel="noopener noreferrer">ورود به سایت رسمی ↗</a><button class="btn ghost" id="detailShare">کپی لینک ابزار</button></div></div></div>
+<div class="overlay" id="compareOverlay"><div class="dialog"><div class="dialog-head"><h3>⚖️ مقایسه ابزارها</h3><button class="close" data-close="compareOverlay" aria-label="بستن">✕</button></div><div id="compareContent"></div></div></div>
+<script>
+const tools=[
+{name:"ChatGPT",icon:"🤖",cat:"متن و گفتگو",price:"پلن رایگان + پولی",free:true,desc:"دستیار چندمنظوره برای نوشتن، یادگیری، تحلیل، ایده‌پردازی و گفتگو.",detail:"برای پرسش‌وپاسخ، توضیح مفاهیم، نوشتن، تحلیل فایل و انجام کارهای روزمره. امکانات به نوع حساب و منطقه بستگی دارد.",url:"https://chatgpt.com",best:"گفتگو و کارهای عمومی"},
+{name:"Claude",icon:"🧠",cat:"متن و گفتگو",price:"پلن رایگان + پولی",free:true,desc:"دستیار هوشمند برای نوشتن، تحلیل متن و کار با محتوای طولانی.",detail:"برای نگارش، خلاصه‌سازی، تحلیل متن‌های طولانی و کمک در برنامه‌ریزی و کدنویسی.",url:"https://claude.ai",best:"نوشتن و تحلیل متن"},
+{name:"Gemini",icon:"💎",cat:"متن و گفتگو",price:"پلن رایگان + پولی",free:true,desc:"دستیار گوگل برای گفتگو، یادگیری، ایده‌سازی و کارهای چندرسانه‌ای.",detail:"برای پرسش‌وپاسخ، یادگیری و استفاده از قابلیت‌های هوش مصنوعی گوگل؛ قابلیت‌ها با حساب و منطقه فرق می‌کنند.",url:"https://gemini.google.com",best:"دستیار عمومی"},
+{name:"Microsoft Copilot",icon:"🪟",cat:"متن و گفتگو",price:"پلن رایگان + پولی",free:true,desc:"دستیار مایکروسافت برای پاسخ‌گویی، ایده‌پردازی و بهره‌وری.",detail:"برای گفتگو، کمک در جست‌وجو و برخی کارهای مرتبط با محصولات مایکروسافت.",url:"https://copilot.microsoft.com",best:"بهره‌وری"},
+{name:"Perplexity",icon:"🔎",cat:"تحقیق و جست‌وجو",price:"پلن رایگان + پولی",free:true,desc:"جست‌وجوی پاسخ‌محور برای تحقیق اولیه و پیدا کردن منابع.",detail:"برای شروع تحقیق و یافتن منابع مرتبط. پاسخ‌های مهم را با مراجعه به منبع اصلی بررسی کن.",url:"https://www.perplexity.ai",best:"جست‌وجو و تحقیق"},
+{name:"Elicit",icon:"📚",cat:"تحقیق و جست‌وجو",price:"پلن رایگان + پولی",free:true,desc:"کمک به جست‌وجو، مرور و سازمان‌دهی مقاله‌های پژوهشی.",detail:"برای یافتن مقاله‌های علمی و استخراج نکات از پژوهش‌ها؛ مناسب کارهای پژوهشی.",url:"https://elicit.com",best:"پژوهش علمی"},
+{name:"Consensus",icon:"🧪",cat:"تحقیق و جست‌وجو",price:"پلن رایگان + پولی",free:true,desc:"بررسی پرسش‌ها با تکیه بر یافته‌های پژوهش‌های علمی.",detail:"برای دیدن شواهد پژوهشی درباره یک پرسش؛ نتیجه را با متن پژوهش‌ها تطبیق بده.",url:"https://consensus.app",best:"شواهد علمی"},
+{name:"Midjourney",icon:"🎨",cat:"تصویر و طراحی",price:"اشتراکی",free:false,desc:"ساخت تصویرهای هنری و خلاقانه از توضیح متنی.",detail:"برای تصویرسازی هنری، ایده‌های بصری و تجربه سبک‌های مختلف. شرایط دسترسی و پلن‌ها را در سایت رسمی ببین.",url:"https://www.midjourney.com",best:"تصویرسازی هنری"},
+{name:"Adobe Firefly",icon:"🔥",cat:"تصویر و طراحی",price:"اعتبار رایگان + پلن پولی",free:true,desc:"ابزارهای ادوبی برای تولید و ویرایش تصویر با هوش مصنوعی.",detail:"برای تولید تصویر و ویرایش خلاقانه در اکوسیستم ادوبی؛ میزان اعتبار رایگان می‌تواند تغییر کند.",url:"https://firefly.adobe.com",best:"طراحی و ویرایش"},
+{name:"Canva",icon:"🖌️",cat:"تصویر و طراحی",price:"پلن رایگان + پولی",free:true,desc:"طراحی پوستر، ارائه و محتوای گرافیکی با ابزارهای هوشمند.",detail:"برای طراحی پوستر، اسلاید، محتوای شبکه‌های اجتماعی و طرح‌های گرافیکی.",url:"https://www.canva.com",best:"طراحی آسان"},
+{name:"Leonardo AI",icon:"🦁",cat:"تصویر و طراحی",price:"اعتبار رایگان + پلن پولی",free:true,desc:"تولید تصویر و عناصر بصری برای پروژه‌های خلاقانه.",detail:"برای ساخت تصویرهای مفهومی، شخصیت‌ها و عناصر گرافیکی؛ سقف استفاده ممکن است تغییر کند.",url:"https://leonardo.ai",best:"تصویر و دارایی بصری"},
+{name:"Ideogram",icon:"🔤",cat:"تصویر و طراحی",price:"پلن رایگان + پولی",free:true,desc:"تولید تصویر با تمرکز ویژه بر طراحی‌های دارای نوشته.",detail:"برای پوستر، طرح‌های تبلیغاتی و تصویرهایی که متن در آن‌ها اهمیت دارد.",url:"https://ideogram.ai",best:"تصویر دارای نوشته"},
+{name:"Runway",icon:"🎬",cat:"ویدیو",price:"پلن رایگان محدود + پولی",free:true,desc:"ابزارهای هوش مصنوعی برای تولید و ویرایش ویدیو.",detail:"برای تجربه تولید ویدیو و ابزارهای خلاقانه مرتبط با تصویر متحرک.",url:"https://runwayml.com",best:"تولید ویدیو"},
+{name:"Pika",icon:"🎞️",cat:"ویدیو",price:"پلن رایگان محدود + پولی",free:true,desc:"ساخت کلیپ‌های کوتاه و خلاقانه با کمک هوش مصنوعی.",detail:"برای تبدیل ایده‌های متنی یا تصویری به ویدیوهای کوتاه.",url:"https://pika.art",best:"کلیپ کوتاه"},
+{name:"Luma AI",icon:"🌌",cat:"ویدیو",price:"پلن رایگان محدود + پولی",free:true,desc:"ابزارهای هوش مصنوعی برای ساخت محتوای بصری و ویدیویی.",detail:"برای آزمایش تولید ویدیو و تجربه ابزارهای سه‌بعدی و بصری.",url:"https://lumalabs.ai",best:"ویدیو و محتوای بصری"},
+{name:"ElevenLabs",icon:"🎙️",cat:"صدا و موسیقی",price:"پلن رایگان + پولی",free:true,desc:"تولید گفتار و صدا با ابزارهای هوش مصنوعی.",detail:"برای تبدیل متن به گفتار و ساخت صدا در پروژه‌های صوتی؛ شرایط استفاده را بررسی کن.",url:"https://elevenlabs.io",best:"تبدیل متن به گفتار"},
+{name:"Suno",icon:"🎵",cat:"صدا و موسیقی",price:"پلن رایگان محدود + پولی",free:true,desc:"ساخت موسیقی با نوشتن توضیح درباره سبک و حال‌وهوا.",detail:"برای آزمایش ساخت ایده‌های موسیقایی با توصیف متنی.",url:"https://suno.com",best:"ساخت موسیقی"},
+{name:"Udio",icon:"🎧",cat:"صدا و موسیقی",price:"پلن رایگان / محدودیت متغیر",free:true,desc:"تولید و تجربه ایده‌های موسیقایی با هوش مصنوعی.",detail:"برای ساخت و تجربه ایده‌های موسیقی؛ وضعیت دسترسی و امکانات را در وب‌سایت رسمی ببین.",url:"https://www.udio.com",best:"ایده موسیقی"},
+{name:"GitHub Copilot",icon:"💻",cat:"برنامه‌نویسی",price:"پلن رایگان محدود + پولی",free:true,desc:"دستیار برنامه‌نویسی برای پیشنهاد، تکمیل و توضیح کد.",detail:"برای تکمیل کد، توضیح بخش‌های برنامه و کمک در محیط توسعه.",url:"https://github.com/features/copilot",best:"کمک به کدنویسی"},
+{name:"Cursor",icon:"⌨️",cat:"برنامه‌نویسی",price:"پلن رایگان محدود + پولی",free:true,desc:"ویرایشگر کد با قابلیت‌های هوش مصنوعی برای توسعه نرم‌افزار.",detail:"برای پرسیدن سؤال درباره کد، ویرایش و درک ساختار پروژه.",url:"https://cursor.com",best:"ویرایش پروژه"},
+{name:"Replit",icon:"🧩",cat:"برنامه‌نویسی",price:"پلن رایگان + پولی",free:true,desc:"محیط آنلاین ساخت و اجرای پروژه‌های برنامه‌نویسی.",detail:"برای شروع پروژه، نوشتن و اجرای کد در محیط آنلاین.",url:"https://replit.com",best:"ساخت پروژه آنلاین"},
+{name:"DeepL",icon:"🌍",cat:"زبان و یادگیری",price:"پلن رایگان + پولی",free:true,desc:"ترجمه و بازنویسی متن در زبان‌های مختلف.",detail:"برای ترجمه و بهتر کردن متن؛ ترجمه‌های مهم را بازبینی کن.",url:"https://www.deepl.com",best:"ترجمه"},
+{name:"Khan Academy",icon:"🎓",cat:"زبان و یادگیری",price:"رایگان",free:true,desc:"منابع آموزشی و ابزارهای یادگیری برای موضوعات درسی.",detail:"برای یادگیری مرحله‌به‌مرحله و تمرین موضوعات آموزشی؛ امکانات هوشمند ممکن است منطقه‌ای باشند.",url:"https://www.khanacademy.org",best:"یادگیری درسی"},
+{name:"Quizlet",icon:"📝",cat:"زبان و یادگیری",price:"پلن رایگان + پولی",free:true,desc:"فلش‌کارت و ابزارهای تمرین برای مرور و یادگیری.",detail:"برای ساخت فلش‌کارت، مرور واژگان و تمرین مطالب درسی.",url:"https://quizlet.com",best:"مرور و تمرین"},
+{name:"Gamma",icon:"📊",cat:"بهره‌وری و ارائه",price:"پلن رایگان + پولی",free:true,desc:"ساخت ارائه، سند و محتوای بصری با کمک هوش مصنوعی.",detail:"برای تبدیل ایده یا متن به ارائه‌های منظم و زیبا.",url:"https://gamma.app",best:"ساخت ارائه"},
+{name:"Notion AI",icon:"🗂️",cat:"بهره‌وری و ارائه",price:"امکانات محدود / پولی",free:false,desc:"کمک به نوشتن، خلاصه‌سازی و سازمان‌دهی یادداشت‌ها.",detail:"برای مدیریت یادداشت‌ها، برنامه‌ریزی و خلاصه‌کردن مطالب در فضای Notion.",url:"https://www.notion.so/product/ai",best:"مدیریت یادداشت"},
+{name:"Zapier",icon:"⚙️",cat:"بهره‌وری و ارائه",price:"پلن رایگان + پولی",free:true,desc:"اتصال سرویس‌ها و خودکارسازی کارهای تکراری.",detail:"برای ساخت گردش‌کار خودکار بین برنامه‌ها و سرویس‌های آنلاین.",url:"https://zapier.com",best:"خودکارسازی"}
+];
+const cats=["همه","متن و گفتگو","تحقیق و جست‌وجو","تصویر و طراحی","ویدیو","صدا و موسیقی","برنامه‌نویسی","زبان و یادگیری","بهره‌وری و ارائه"];
+const $=id=>document.getElementById(id);let activeCat="همه",favorites=JSON.parse(localStorage.getItem("vitrin-favs")||"[]"),compare=[],onlyFav=false,currentDetail=null;
+$("countTools").textContent=tools.length+"+";
+function toast(msg){$("toast").textContent=msg;$("toast").classList.add("show");clearTimeout(toast.timer);toast.timer=setTimeout(()=>$("toast").classList.remove("show"),2200)}
+function renderChips(){$("chips").innerHTML=cats.map(c=>`<button class="chip ${c===activeCat?"active":""}" data-cat="${c}">${c}</button>`).join("");$("chips").querySelectorAll("[data-cat]").forEach(b=>b.onclick=()=>{activeCat=b.dataset.cat;renderChips();render()})}
+function render(){
+ let q=$("search").value.trim().toLowerCase(),price=$("priceFilter").value;
+ let list=tools.filter(t=>(activeCat==="همه"||t.cat===activeCat)&&(!onlyFav||favorites.includes(t.name))&&(price==="all"||(price==="free"&&t.free)||(price==="paid"&&!t.free))&&(!q||(t.name+" "+t.cat+" "+t.desc+" "+t.best).toLowerCase().includes(q)));
+ const s=$("sort").value;if(s==="az")list.sort((a,b)=>a.name.localeCompare(b.name));if(s==="free")list.sort((a,b)=>Number(b.free)-Number(a.free));if(s==="favorites")list.sort((a,b)=>Number(favorites.includes(b.name))-Number(favorites.includes(a.name)));if(s==="popular")list.sort((a,b)=>average(b.name)-average(a.name));if(s==="newest")list.sort((a,b)=>addedAt(b.name)-addedAt(a.name));
+ $("resultCount").textContent=`نمایش ${list.length} از ${tools.length} ابزار`;
+ $("grid").innerHTML=list.length?list.map((t,i)=>`<article class="card" id="tool-${slug(t.name)}" style="animation-delay:${i%9*.035}s"><div class="card-top"><div class="tool-icon">${t.icon}</div><div class="card-controls"><button class="mini-btn ${favorites.includes(t.name)?"saved":""}" data-fav="${esc(t.name)}" aria-label="ذخیره ${esc(t.name)}" title="علاقه‌مندی">${favorites.includes(t.name)?"★":"☆"}</button><button class="mini-btn ${compare.includes(t.name)?"checked":""}" data-compare="${esc(t.name)}" aria-label="انتخاب برای مقایسه" title="مقایسه">${compare.includes(t.name)?"☑":"⚖"}</button></div></div><h3>${t.name}</h3><div class="tags"><span class="tag">${t.cat}</span><span class="tag price">${t.price}</span></div><p>${t.desc}</p><div class="review-strip"><span class="review-summary" data-summary="${esc(t.name)}"></span><button class="more" data-review="${esc(t.name)}">ثبت نظر</button></div><div class="card-bottom"><a class="visit" href="${t.url}" target="_blank" rel="noopener noreferrer">ورود به سایت ↗</a><button class="more" data-detail="${esc(t.name)}">جزئیات</button></div></article>`).join(""):`<div class="empty">موردی پیدا نشد. عبارت جست‌وجو یا فیلترها را تغییر بده. 🔎</div>`;
+ $("grid").querySelectorAll("[data-fav]").forEach(b=>b.onclick=()=>{let n=b.dataset.fav;favorites=favorites.includes(n)?favorites.filter(x=>x!==n):[...favorites,n];localStorage.setItem("vitrin-favs",JSON.stringify(favorites));render();toast(favorites.includes(n)?"به علاقه‌مندی‌ها اضافه شد ⭐":"از علاقه‌مندی‌ها حذف شد")});
+ $("grid").querySelectorAll("[data-compare]").forEach(b=>b.onclick=()=>{let n=b.dataset.compare;if(compare.includes(n))compare=compare.filter(x=>x!==n);else if(compare.length>=3){toast("حداکثر ۳ ابزار را می‌توانی مقایسه کنی.");return}else compare.push(n);updateCompare();render()});
+ $("grid").querySelectorAll("[data-detail]").forEach(b=>b.onclick=()=>showDetail(b.dataset.detail));
+}
+function esc(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function slug(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,"-")}
+function updateCompare(){$("compareBar").classList.toggle("show",compare.length>0);$("compareCount").textContent=`${compare.length} ابزار انتخاب شده (حداکثر ۳)`}
+function showDetail(name){let t=tools.find(x=>x.name===name);if(!t)return;currentDetail=t;$("detailTitle").textContent=t.icon+" "+t.name;$("detailMeta").innerHTML=`<span class="tag">${t.cat}</span><span class="tag price">${t.price}</span><span class="tag">مناسب برای: ${t.best}</span>`;$("detailText").textContent=t.detail;$("detailVisit").href=t.url;$("detailOverlay").classList.add("show")}
+function showCompare(){if(compare.length<2){toast("برای مقایسه، دست‌کم دو ابزار انتخاب کن.");return}let selected=compare.map(n=>tools.find(t=>t.name===n));$("compareContent").innerHTML=`<table class="compare-table"><thead><tr><th>ویژگی</th>${selected.map(t=>`<th>${t.icon} ${t.name}</th>`).join("")}</tr></thead><tbody><tr><th>دسته</th>${selected.map(t=>`<td>${t.cat}</td>`).join("")}</tr><tr><th>هزینه</th>${selected.map(t=>`<td>${t.price}</td>`).join("")}</tr><tr><th>کاربرد شاخص</th>${selected.map(t=>`<td>${t.best}</td>`).join("")}</tr><tr><th>توضیح</th>${selected.map(t=>`<td>${t.desc}</td>`).join("")}</tr><tr><th>وب‌سایت</th>${selected.map(t=>`<td><a class="visit" href="${t.url}" target="_blank" rel="noopener">ورود ↗</a></td>`).join("")}</tr></tbody></table>`;$("compareOverlay").classList.add("show")}
+$("search").addEventListener("input",render);$("sort").addEventListener("change",render);$("priceFilter").addEventListener("change",render);
+$("favToggle").onclick=()=>{onlyFav=!onlyFav;$("favToggle").textContent=onlyFav?"♥":"♡";$("favToggle").style.color=onlyFav?"#f27bc2":"";render();$("tools").scrollIntoView({behavior:"smooth"})};
+$("themeBtn").onclick=()=>{let light=document.body.classList.toggle("light");$("themeBtn").textContent=light?"🌙":"☀️";localStorage.setItem("vitrin-theme",light?"light":"dark")};
+if(localStorage.getItem("vitrin-theme")==="light"){document.body.classList.add("light");$("themeBtn").textContent="🌙"}
+$("clearCompare").onclick=()=>{compare=[];updateCompare();render()};$("showCompare").onclick=showCompare;
+document.querySelectorAll("[data-close]").forEach(b=>b.onclick=()=>$(b.dataset.close).classList.remove("show"));
+document.querySelectorAll(".overlay").forEach(o=>o.addEventListener("click",e=>{if(e.target===o)o.classList.remove("show")}));
+document.addEventListener("keydown",e=>{if(e.key==="Escape")document.querySelectorAll(".overlay.show").forEach(o=>o.classList.remove("show"))});
+$("detailShare").onclick=async()=>{if(!currentDetail)return;let url=location.href.split("#")[0]+"#tool-"+slug(currentDetail.name);try{await navigator.clipboard.writeText(url);toast("لینک ابزار کپی شد 🔗")}catch{toast("مرورگر اجازه کپی نداد؛ نشانی سایت را کپی کن.")}};
+$("backtop").onclick=()=>window.scrollTo({top:0,behavior:"smooth"});window.addEventListener("scroll",()=>$("backtop").classList.toggle("show",window.scrollY>500));
+if(location.hash.startsWith("#tool-")){let target=decodeURIComponent(location.hash.slice(6));setTimeout(()=>{let el=document.getElementById("tool-"+target);if(el)el.scrollIntoView()},400)}
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");observer.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+renderChips();render();updateCompare();
+</script>
+
+<script>
+// افزونه حساب نمایشی، دیدگاه‌ها، رتبه‌بندی، ابزارهای تازه و مدیریت محلی
+const reviewStoreKey="vitrin-reviews-v1", customStoreKey="vitrin-custom-tools-v1", profileKey="vitrin-profile-v1", datesKey="vitrin-added-dates-v1";
+let reviews=JSON.parse(localStorage.getItem(reviewStoreKey)||"[]");
+let customTools=JSON.parse(localStorage.getItem(customStoreKey)||"[]");
+let profile=JSON.parse(localStorage.getItem(profileKey)||"null");
+let chosenRating=5, reviewTarget=null;
+function saveReviews(){localStorage.setItem(reviewStoreKey,JSON.stringify(reviews))}
+function saveCustom(){localStorage.setItem(customStoreKey,JSON.stringify(customTools))}
+function average(name){let r=reviews.filter(x=>x.tool===name);return r.length?r.reduce((s,x)=>s+x.rate,0)/r.length:0}
+function addedAt(name){let dates=JSON.parse(localStorage.getItem(datesKey)||"{}");return dates[name]||0}
+function stars(n){return "★".repeat(Math.round(n))+"☆".repeat(5-Math.round(n))}
+function updateReviewSummaries(){
+ document.querySelectorAll("[data-summary]").forEach(el=>{let n=el.dataset.summary,c=reviews.filter(x=>x.tool===n).length,a=average(n);el.innerHTML=c?`<span class="stars">${stars(a)}</span> ${a.toFixed(1)} · ${c} نظر`:`هنوز امتیازی ندارد`});
+ let ranked=[...tools].map(t=>({t,a:average(t.name),n:reviews.filter(x=>x.tool===t.name).length})).filter(x=>x.n).sort((a,b)=>b.a-a.a||b.n-a.n).slice(0,8);
+ $("leaderboard").innerHTML=ranked.length?ranked.map((x,i)=>`<div class="admin-row"><div><span class="rank-number">${i+1}</span><strong>${x.t.icon} ${esc(x.t.name)}</strong><br><small><span class="stars">${stars(x.a)}</span> ${x.a.toFixed(1)} از ۵ · ${x.n} نظر</small></div><button class="more" data-rank-detail="${esc(x.t.name)}">مشاهده</button></div>`).join(""):`<p class="hint">هنوز امتیازی ثبت نشده؛ اولین نفری باش که به یک ابزار امتیاز می‌دهد.</p>`;
+ $("leaderboard").querySelectorAll("[data-rank-detail]").forEach(b=>b.onclick=()=>showDetail(b.dataset.rankDetail));
+ let latest=[...reviews].sort((a,b)=>b.time-a.time).slice(0,8);
+ $("latestReviews").innerHTML=latest.length?latest.map(r=>`<div class="review-item"><strong>${esc(r.user)} درباره ${esc(r.tool)}</strong> <span class="stars">${stars(r.rate)}</span><p>${esc(r.text)}</p><small class="hint">${new Date(r.time).toLocaleDateString("fa-IR")}</small></div>`).join(""):`<p class="hint">هنوز دیدگاهی ثبت نشده است.</p>`;
+}
+function refreshAll(){render();updateReviewSummaries();renderAdminList()}
+function renderAdminList(){
+ let custom=tools.filter(t=>t.custom);
+ $("adminList").innerHTML=custom.length?custom.map(t=>`<div class="admin-row"><div><strong>${t.icon} ${esc(t.name)}</strong><br><small>${esc(t.cat)} · ${esc(t.url)}</small></div><button class="danger" data-delete-tool="${esc(t.name)}">حذف</button></div>`).join(""):`<p class="hint">هنوز ابزار سفارشی اضافه نکرده‌ای.</p>`;
+ $("adminList").querySelectorAll("[data-delete-tool]").forEach(b=>b.onclick=()=>{let n=b.dataset.deleteTool;customTools=customTools.filter(t=>t.name!==n);let idx=tools.findIndex(t=>t.name===n&&t.custom);if(idx>=0)tools.splice(idx,1);saveCustom();renderAdminList();render();toast("ابزار از فهرست این مرورگر حذف شد.")});
+}
+function openAccount(){
+ $("accountOverlay").classList.add("show");
+ if(profile){$("accountContent").innerHTML=`<div class="user-box"><div><strong>سلام، ${esc(profile.name)} 👋</strong><p class="hint">حساب نمایشی این مرورگر فعال است.</p></div><button class="btn ghost" id="logoutBtn">خروج</button></div><div class="note">این ورود فقط برای نمایش امکانات نمونه است و حساب واقعی یا همگام‌سازی بین دستگاه‌ها ایجاد نمی‌کند.</div>`;$("logoutBtn").onclick=()=>{profile=null;localStorage.removeItem(profileKey);openAccount();toast("از حساب نمایشی خارج شدی.")}}
+ else{$("accountContent").innerHTML=`<form id="profileForm"><p class="hint">برای ثبت دیدگاه، یک نام نمایشی انتخاب کن. در این نسخه رمز عبور یا اطلاعات حساس دریافت نمی‌شود.</p><div class="field"><label for="profileName">نام نمایشی</label><input id="profileName" required maxlength="30" placeholder="مثلاً علی"></div><div class="form-actions"><button class="btn primary">ورود / ساخت پروفایل نمایشی</button></div></form><div class="note">این پروفایل فقط در همین مرورگر ذخیره می‌شود؛ برای ورود امن واقعی باید سامانه سمت سرور راه‌اندازی شود.</div>`;$("profileForm").onsubmit=e=>{e.preventDefault();profile={name:$("profileName").value.trim()};localStorage.setItem(profileKey,JSON.stringify(profile));openAccount();toast("پروفایل نمایشی ساخته شد.")}}
+}
+function openReview(name){if(!profile){toast("برای ثبت دیدگاه، ابتدا پروفایل نمایشی بساز.");openAccount();return}reviewTarget=name;chosenRating=5;$("reviewTitle").textContent="⭐ ثبت دیدگاه برای "+name;$("reviewText").value="";paintRating();$("reviewOverlay").classList.add("show")}
+function paintRating(){$("ratingInput").querySelectorAll("button").forEach(b=>b.classList.toggle("active",Number(b.dataset.rate)<=chosenRating))}
+$("accountBtn").onclick=openAccount;
+$("ratingInput").querySelectorAll("button").forEach(b=>b.onclick=()=>{chosenRating=Number(b.dataset.rate);paintRating()});
+$("reviewForm").onsubmit=e=>{e.preventDefault();if(!profile||!reviewTarget)return;let text=$("reviewText").value.trim();if(!text)return;reviews.push({tool:reviewTarget,user:profile.name,rate:chosenRating,text,time:Date.now()});saveReviews();$("reviewOverlay").classList.remove("show");refreshAll();toast("دیدگاهت ثبت شد. ممنون از مشارکتت! ⭐")};
+function installCustomTools(){
+ // Keep user-added entries available after reload.
+ customTools.forEach(t=>{if(!tools.some(x=>x.name.toLowerCase()===t.name.toLowerCase()))tools.push({...t,custom:true})});
+ let dates=JSON.parse(localStorage.getItem(datesKey)||"{}");customTools.forEach(t=>{if(!dates[t.name])dates[t.name]=t.created||Date.now()});localStorage.setItem(datesKey,JSON.stringify(dates));
+ $("newCat").innerHTML=cats.filter(c=>c!=="همه").map(c=>`<option>${c}</option>`).join("");
+}
+$("addToolForm").onsubmit=e=>{
+ e.preventDefault();
+ let name=$("newName").value.trim(),url=$("newUrl").value.trim();
+ try{let parsed=new URL(url);if(!["http:","https:"].includes(parsed.protocol))throw 0}catch{toast("لطفاً یک لینک معتبر با https وارد کن.");return}
+ if(tools.some(t=>t.name.toLowerCase()===name.toLowerCase())){toast("ابزاری با این نام از قبل وجود دارد.");return}
+ let t={name,icon:$("newIcon").value.trim()||"✨",cat:$("newCat").value,price:$("newPrice").value==="free"?"رایگان یا دارای پلن رایگان":"اشتراکی / پولی",free:$("newPrice").value==="free",desc:$("newDesc").value.trim(),detail:$("newDesc").value.trim(),url,best:$("newBest").value.trim(),custom:true,created:Date.now()};
+ customTools.push(t);tools.push(t);saveCustom();let dates=JSON.parse(localStorage.getItem(datesKey)||"{}");dates[name]=Date.now();localStorage.setItem(datesKey,JSON.stringify(dates));$("addToolForm").reset();refreshAll();toast("ابزار جدید به فهرست اضافه شد ✨");
+};
+const originalRender=render;
+render=function(){originalRender();updateReviewSummaries()};
+const originalShowDetail=showDetail;
+showDetail=function(name){originalShowDetail(name);let t=tools.find(x=>x.name===name);if(t){let old=$("detailText").textContent;$("detailText").textContent=old+` امتیاز کاربران: ${average(name)?average(name).toFixed(1)+" از ۵":"هنوز ثبت نشده"}؛ تعداد دیدگاه‌ها: ${reviews.filter(x=>x.tool===name).length}.`;let btn=document.createElement("button");btn.className="btn ghost";btn.textContent="ثبت دیدگاه";btn.style.marginTop="12px";btn.onclick=()=>{$("detailOverlay").classList.remove("show");openReview(name)};$("detailText").after(btn)}};
+$("grid").addEventListener("click",e=>{let b=e.target.closest("[data-review]");if(b)openReview(b.dataset.review)});
+installCustomTools();refreshAll();
+</script>
+
+</body>
+</html>
